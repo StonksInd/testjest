@@ -1,0 +1,56 @@
+/* Style personnalisé pour notre application */
+
+/* Ajustements pour le titre principal */
+h1 {
+    color: #0066cc;
+    margin-bottom: 2rem;
+  }
+  
+  /* Stylisation des cartes pour un meilleur aspect visuel */
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .card-header {
+    background-color: #f8f9fa;
+    font-weight: 500;
+  }
+  
+  /* Style pour les éléments de l'historique et des favoris */
+  .list-group-item {
+    transition: background-color 0.2s;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+  
+  /* Amélioration du bouton de conversion */
+  button[type="submit"] {
+    transition: all 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style pour le résultat */
+  #result {
+    font-weight: 500;
+    font-size: 1.1em;
+  }
+  
+  /* Style pour les sélections de catégories et d'unités */
+  select.form-select {
+    cursor: pointer;
+  }
+  
+  /* Responsivité pour les petits écrans */
+  @media (max-width: 768px) {
+    #favorites {
+      position: static !important;
+    }
+  }
