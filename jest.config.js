@@ -21,5 +21,6 @@ export default {
     '!src/services/**/*.d.ts'
   ],
   coverageReporters: ['text', 'lcov', 'html'],
-  setupFiles: ['<rootDir>/src/tests/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>/src/tests/setupTests.ts'],
+
 };

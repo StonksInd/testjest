@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,8 +93,8 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -106,25 +106,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const HISTORY_KEY = <span class="cstat-no" title="statement not covered" >'unitConverterHistory';</span>
-const MAX_HISTORY_ITEMS = <span class="cstat-no" title="statement not covered" >10;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const HISTORY_KEY = 'unitConverterHistory';
+const MAX_HISTORY_ITEMS = 10;
 &nbsp;
 export interface HistoryItem {
   category: string;
@@ -135,24 +135,24 @@ export interface HistoryItem {
   date: string;
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >getHistory(</span>): HistoryItem[] {
-  const history = <span class="cstat-no" title="statement not covered" >localStorage.getItem(HISTORY_KEY);</span>
-<span class="cstat-no" title="statement not covered" >  return history ? JSON.parse(history) : [];</span>
+export function getHistory(): HistoryItem[] {
+  const history = localStorage.getItem(HISTORY_KEY);
+  return history ? JSON.parse(history) : [];
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >addToHistory(</span>item: HistoryItem) {
-  let history = <span class="cstat-no" title="statement not covered" >getHistory();</span>
-<span class="cstat-no" title="statement not covered" >  history.unshift(item);</span>
+export function addToHistory(item: HistoryItem) {
+  let history = getHistory();
+  history.unshift(item);
   
-<span class="cstat-no" title="statement not covered" >  <span class="missing-if-branch" title="if path not taken" >I</span>if (history.length &gt; MAX_HISTORY_ITEMS) {</span>
-<span class="cstat-no" title="statement not covered" >    history = history.slice(0, MAX_HISTORY_ITEMS);</span>
+  if (history.length &gt; MAX_HISTORY_ITEMS) {
+    history = history.slice(0, MAX_HISTORY_ITEMS);
   }
   
-<span class="cstat-no" title="statement not covered" >  localStorage.setItem(HISTORY_KEY, JSON.stringify(history));</span>
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >clearHistory(</span>) {
-<span class="cstat-no" title="statement not covered" >  localStorage.removeItem(HISTORY_KEY);</span>
+export function clearHistory() {
+  localStorage.removeItem(HISTORY_KEY);
 }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -160,7 +160,7 @@ export function <span class="fstat-no" title="function not covered" >clearHistor
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-11T09:38:12.851Z
+                at 2025-05-11T10:37:53.773Z
             </div>
         <script src="prettify.js"></script>
         <script>

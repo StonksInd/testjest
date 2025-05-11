@@ -1,11 +1,13 @@
 import { getExchangeRate } from '../../services/currencyApi';
-
-// Mock de l'API
+import { jest } from '@jest/globals';
 global.fetch = jest.fn(() =>
   Promise.resolve({
-    json: () => Promise.resolve({ eur: 1.2 }),
+    json: () => Promise.resolve({
+      usd: { eur: 1.2 }
+    }),
   })
 ) as jest.Mock;
+
 
 describe('Currency API Service', () => {
   beforeEach(() => {

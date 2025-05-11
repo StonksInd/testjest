@@ -1,4 +1,7 @@
-// Configuration du localStorage pour les tests Jest
+import 'jest';
+import { jest } from '@jest/globals';
+import { afterEach } from '@jest/globals';
+
 class LocalStorageMock implements Storage {
     private store: Record<string, string>;
   
@@ -32,17 +35,14 @@ class LocalStorageMock implements Storage {
     }
   }
   
-  // Mock du localStorage global
   global.localStorage = new LocalStorageMock();
   
-  // Mock de fetch global
-  global.fetch = jest.fn(() =>
+  global.fetch = jest.fn((): Promise<Response> =>
     Promise.resolve({
       json: () => Promise.resolve({}),
-    })
-  ) as jest.Mock;
+    } as Response)
+  );
   
-  // Nettoyage après chaque test
   afterEach(() => {
     jest.clearAllMocks();
   });

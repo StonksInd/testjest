@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -95,67 +95,67 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const FAVORITES_KEY = <span class="cstat-no" title="statement not covered" >'unitConverterFavorites';</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const FAVORITES_KEY = 'unitConverterFavorites';
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >getFavorites(</span>): any[] {
-  const favorites = <span class="cstat-no" title="statement not covered" >localStorage.getItem(FAVORITES_KEY);</span>
-<span class="cstat-no" title="statement not covered" >  return favorites ? JSON.parse(favorites) : [];</span>
+export function getFavorites(): any[] {
+  const favorites = localStorage.getItem(FAVORITES_KEY);
+  return favorites ? JSON.parse(favorites) : [];
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >addFavorite(</span>conversion: any) {
-  const favorites = <span class="cstat-no" title="statement not covered" >getFavorites();</span>
-<span class="cstat-no" title="statement not covered" >  <span class="missing-if-branch" title="if path not taken" >I</span>if (!isFavorite(conversion)) {</span>
-<span class="cstat-no" title="statement not covered" >    favorites.push(conversion);</span>
-<span class="cstat-no" title="statement not covered" >    localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));</span>
+export function addFavorite(conversion: any) {
+  const favorites = getFavorites();
+  if (!isFavorite(conversion)) {
+    favorites.push(conversion);
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
   }
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >removeFavorite(</span>conversion: any) {
-  let favorites = <span class="cstat-no" title="statement not covered" >getFavorites();</span>
-<span class="cstat-no" title="statement not covered" >  favorites = favorites.filter(<span class="fstat-no" title="function not covered" >fav </span>=&gt; </span>
-<span class="cstat-no" title="statement not covered" >    !(fav.category === conversion.category &amp;&amp; </span>
+export function removeFavorite(conversion: any) {
+  let favorites = getFavorites();
+  favorites = favorites.filter(fav =&gt; 
+    !(fav.category === conversion.category &amp;&amp; 
       fav.fromUnit === conversion.fromUnit &amp;&amp; 
       fav.toUnit === conversion.toUnit)
   );
-<span class="cstat-no" title="statement not covered" >  localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));</span>
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >isFavorite(</span>conversion: any): boolean {
-  const favorites = <span class="cstat-no" title="statement not covered" >getFavorites();</span>
-<span class="cstat-no" title="statement not covered" >  return favorites.some(<span class="fstat-no" title="function not covered" >fav </span>=&gt; </span>
-<span class="cstat-no" title="statement not covered" >    fav.category === conversion.category &amp;&amp; </span>
+export function isFavorite(conversion: any): boolean {
+  const favorites = getFavorites();
+  return favorites.some(fav =&gt; 
+    fav.category === conversion.category &amp;&amp; 
     fav.fromUnit === conversion.fromUnit &amp;&amp; 
     fav.toUnit === conversion.toUnit
   );
@@ -166,7 +166,7 @@ export function <span class="fstat-no" title="function not covered" >isFavorite(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-11T09:38:12.851Z
+                at 2025-05-11T10:37:53.773Z
             </div>
         <script src="prettify.js"></script>
         <script>

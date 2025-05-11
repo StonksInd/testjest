@@ -1,4 +1,4 @@
-import { getHistory, clearHistory, HistoryItem } from '../services/history';
+import { getHistory, clearHistory } from '../services/history';
 
 export class HistoryList {
   constructor(private container: HTMLElement) {
