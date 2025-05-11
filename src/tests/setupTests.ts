@@ -1,5 +1,5 @@
 // Configuration du localStorage pour les tests Jest
-class LocalStorageMock {
+class LocalStorageMock implements Storage {
     private store: Record<string, string>;
   
     constructor() {
@@ -21,15 +21,26 @@ class LocalStorageMock {
     removeItem(key: string) {
       delete this.store[key];
     }
+  
+    get length() {
+      return Object.keys(this.store).length;
+    }
+  
+    key(index: number) {
+      const keys = Object.keys(this.store);
+      return keys[index] || null;
+    }
   }
   
   // Mock du localStorage global
-  Object.defineProperty(window, 'localStorage', {
-    value: new LocalStorageMock(),
-  });
+  global.localStorage = new LocalStorageMock();
   
-  // Mock de fetch global (si nécessaire)
-  global.fetch = jest.fn();
+  // Mock de fetch global
+  global.fetch = jest.fn(() =>
+    Promise.resolve({
+      json: () => Promise.resolve({}),
+    })
+  ) as jest.Mock;
   
   // Nettoyage après chaque test
   afterEach(() => {
